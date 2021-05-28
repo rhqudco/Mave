@@ -54,12 +54,12 @@ public class Page2_sub_answer extends AppCompatActivity {
             public void onClick(View view) {
                 adapter.addItem(edt_title.getText().toString());
                 edt_title.setText("");
-                count++;
+                count++; // 꽃 모양 카운트
                 /*SharedPreferences sharedPreferences = getSharedPreferences("ansewercount",MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putInt("addcount", count);
                 editor.commit();*/
-                PreferenceManager.setInt(mContext, "test", count);
+                PreferenceManager.setInt(mContext, "test", count); // 꽃 모양 카운트 프리퍼런스 저장
                 adapter.notifyDataSetChanged();
             }
         });

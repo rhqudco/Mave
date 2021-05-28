@@ -15,6 +15,7 @@ import java.util.ArrayList;
 
         private Context mContext;
         private ArrayList<Answer_Item> listItems = new ArrayList<Answer_Item>();
+        private ArrayList<Answer_Item> listItems_for_name = new ArrayList<Answer_Item>();
 
         public ListViewAdapter(Context context){
             this.mContext = context;
@@ -43,6 +44,8 @@ import java.util.ArrayList;
             // 참조 획득
             TextView txt_title = (TextView)convertView.findViewById(R.id.txt_title);
             Answer_Item listItem = listItems.get(position);
+            TextView txt_name = (TextView)convertView.findViewById(R.id.txt_name);
+            Answer_Item listItem_for_name = listItems.get(position);
             // 가져온 데이터를 텍스트뷰에 입력
             txt_title.setText(listItem.getAnswer());
             return convertView;
@@ -52,6 +55,12 @@ import java.util.ArrayList;
             Answer_Item listItem = new Answer_Item();
             listItem.setAnswer(answer);
             listItems.add(listItem);
+        }
+
+        public void addName(String name){
+            Answer_Item listItem = new Answer_Item();
+            listItem.setAnswer(name);
+            listItems_for_name.add(listItem);
         }
     }
 
